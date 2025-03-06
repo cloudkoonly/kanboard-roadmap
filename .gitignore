@@ -1,0 +1,4 @@
+.idea/
+/plugins/*
+!/plugins/.gitkeep
+/config.php
