@@ -5,8 +5,10 @@ A powerful and open-source product roadmap, feedback, and changelog management s
 ## Demo View
 
 ![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/koonly-roadmap.png)
-![Demo Feedback](https://file.cloudkoonly.com/data/kanborad-roadmap/koonly-feedback.png)
-![Demo Changelog](https://file.cloudkoonly.com/data/kanborad-roadmap/changelog.png)
+---
+![Demo Feedback](https://file.cloudkoonly.com/data/kanborad-roadmap/feedback2.png)
+---
+![Demo Changelog](https://file.cloudkoonly.com/data/kanborad-roadmap/changelog2.png)
 
 ## 🚀 Features
 
