@@ -549,47 +549,6 @@
             flex: 1;
         }
     }
-
-    /* Nav and Header Styles */
-    .nav-logo {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 600;
-    }
-
-    .nav-logo::before {
-        content: '\f0c2';  /* Cloud icon */
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: 1.2em;
-        color: #3b82f6;
-        margin-right: 4px;
-    }
-
-    .section-header {
-        display: flex;
-        align-items: center;
-        margin: 2rem 0;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--border-color);
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .section-title::before {
-        content: '\f7a9';  /* Route icon */
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        color: #3b82f6;
-    }
 </style>
 </head>
 <?php require_once __DIR__ . '/common/top.php';?>

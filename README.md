@@ -1,10 +1,12 @@
 # Kanboard Roadmap
 
-A powerful and open-source product roadmap, feedback, and changelog management system built on top of Kanboard. Perfect alternative to canny.io and featurebase.app for managing your product development lifecycle.
+An open source system, including product roadmap, feedback, and changelog built on top of Kanboard. Perfect alternative to canny.io and featurebase.app.
+
+### Demo Site:  [Click Me](https://roadmap.cloudkoonly.com/roadmap/)
 
 ## Demo View
 
-![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/koonly-roadmap.png)
+![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/roadmap-231240.png)
 ---
 ![Demo Feedback](https://file.cloudkoonly.com/data/kanborad-roadmap/feedback2.png)
 ---
@@ -70,17 +72,13 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 2. Create your feature branch
 3. Submit a pull request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 📅 Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for all notable changes.
 
 ## 🎯 Roadmap
 
-View our public roadmap at `http://your-kanboard-url/roadmap` to see what features we're planning.
+View our public roadmap at `https://roadmap.cloudkoonly.com/roadmap/` to see what features we're planning.
 
 ## 💬 Support
 
@@ -95,6 +93,10 @@ View our public roadmap at `http://your-kanboard-url/roadmap` to see what featur
 - **Cost-effective**: No monthly subscription fees
 - **Integrated**: Seamlessly works with Kanboard
 - **Customizable**: Adapt to your workflow and branding
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 Last updated: March 6, 2025
