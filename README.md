@@ -47,7 +47,6 @@ You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](htt
 
 - **Changelog Management**
   - Version-based release notes
-  - Automatic changelog generation
   - Release date tracking
   - Feature categorization
 
