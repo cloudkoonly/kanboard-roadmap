@@ -25,7 +25,7 @@ You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](htt
 
 ### Screenshots
 
-![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/roadmap-231240.png)
+![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/roadmap-20250319-190035.png)
 
 ![Demo Feedback](https://file.cloudkoonly.com/data/kanborad-roadmap/feedback2.png)
 
