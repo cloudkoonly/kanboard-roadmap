@@ -518,7 +518,7 @@ require_once __DIR__ . '/../common/header.php';
 <?php require_once __DIR__ . '/../common/top.php';?>
 
 <div class="section-header">
-    <h2 class="section-title">Feature Requests & Feedback</h2>
+    <h2 class="section-title"></h2>
     <button onclick="openAddFeedbackModal()" class="add-feedback-button button">
     <i class="fa-solid fa-plus"></i> Add Feedback
 </button>
@@ -1008,7 +1008,7 @@ require_once __DIR__ . '/../common/header.php';
                 await loadFeedback();
                 
                 // Close modal if it exists
-                const modal = document.querySelector('.feedback-modal');
+                const modal = document.querySelector('.modal');
                 if (modal) {
                     modal.style.display = 'none';
                 }

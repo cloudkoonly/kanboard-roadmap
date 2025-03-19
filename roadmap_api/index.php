@@ -14,10 +14,10 @@ $config['db_user'] = DB_USERNAME?:'root';
 $config['db_pass'] = DB_PASSWORD?:'123456';
 $config['db_host'] = DB_HOSTNAME?:'mysql';
 $config['db_database'] = DB_NAME?:'kanboard';
-$db = new Database;
+$db = Database::getInstance();
 $db->conn($config);
 $sql = "select * from tasks where project_id=1";
-$tasks = $db->query($sql, 'rows');
+$tasks = $db->query($sql, [], 'rows');
 $data = [];
 $column = [
     1=>'in-review',
@@ -36,8 +36,9 @@ $priority = [
 foreach ($tasks as $key => $task) {
     $index = $column[$task['column_id']]??'';
     if (empty($index)) continue;
-    $sql = "select * from comments where task_id=".$task['id'];
-    $res = $db->query($sql, 'rows');
+    $sql = "select * from comments where task_id=:taskId";
+    $params = ['taskId'=>$task['id']];
+    $res = $db->query($sql, $params, 'rows');
     $comments = [];
     foreach ($res as $k=>$c) {
         $comments[$k]['author'] = $c['user_id'];
@@ -45,8 +46,9 @@ foreach ($tasks as $key => $task) {
         $comments[$k]['text'] = $c['comment'];
     }
 
-    $sql = "select t.name from tags t,task_has_tags tt where t.id=tt.tag_id and tt.task_id=".$task['id'];
-    $res = $db->query($sql, 'rows');
+    $sql = "select t.name from tags t,task_has_tags tt where t.id=tt.tag_id and tt.task_id=:taskId";
+    $params = ['taskId'=>$task['id']];
+    $res = $db->query($sql, $params, 'rows');
     $tags = [];
     foreach ($res as $k=>$t) {
         $tags[$k] = $t['name'];

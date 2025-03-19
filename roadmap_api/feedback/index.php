@@ -31,45 +31,48 @@ $config['db_user'] = DB_USERNAME ?: 'root';
 $config['db_pass'] = DB_PASSWORD ?: '123456';
 $config['db_host'] = DB_HOSTNAME ?: 'mysql';
 $config['db_database'] = DB_NAME ?: 'kanboard';
-$db = new Database;
+$db = Database::getInstance();
 $db->conn($config);
 
 try {
     // Insert new feedback into tasks table
-    $sql = "INSERT INTO tasks (title, description, project_id, column_id, date_creation) 
-            VALUES (?, ?, 1, 5, ?)";
-    $params = [$title, $description, time()];
-    $taskId = $db->query($sql, 'insert', $params);
+    $db->beginTransaction();
+    $sql = "INSERT INTO tasks (title, `description`, swimlane_id, project_id, column_id, date_creation) 
+            VALUES (:title, :description, 1, 1, 5, :time)";
+    $params = [':title' => $title, ':description' => $description, ':time' => time()];
+    $taskId = $db->query($sql, $params, 'id');
 
     // Add tags if provided
     if (!empty($tags)) {
         foreach ($tags as $tag) {
             // First check if tag exists
-            $sql = "SELECT id FROM tags WHERE name = ?";
-            $result = $db->query($sql, 'row', [$tag]);
+            $sql = "SELECT id FROM tags WHERE name = :tag";
+            $result = $db->query($sql, [':tag' => $tag], 'row');
             
             $tagId = null;
             if ($result) {
                 $tagId = $result['id'];
             } else {
                 // Create new tag
-                $sql = "INSERT INTO tags (name) VALUES (?)";
-                $tagId = $db->query($sql, 'insert', [$tag]);
+                $sql = "INSERT INTO tags (name) VALUES (:tag)";
+                $tagId = $db->query($sql,  [':tag' => $tag], 'id');
             }
 
             // Link tag to task
             if ($tagId) {
-                $sql = "INSERT INTO task_has_tags (task_id, tag_id) VALUES (?, ?)";
-                $db->query($sql, 'insert', [$taskId, $tagId]);
+                $sql = "INSERT INTO task_has_tags (task_id, tag_id) VALUES (:taskId, :tagId)";
+                $db->query($sql, [':taskId' => $taskId, ':tagId' => $tagId], '');
             }
         }
     }
 
+    $db->commit();
     $return['status'] = 'ok';
     $return['message'] = 'Feedback added successfully';
     $return['data'] = ['id' => $taskId];
 } catch (Exception $e) {
     $return['message'] = 'Failed to add feedback: ' . $e->getMessage();
+    $db->rollback();
 }
 
 echo json_encode($return);

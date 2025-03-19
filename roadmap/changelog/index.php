@@ -33,13 +33,14 @@ require_once __DIR__ . '/../common/header.php';
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05),
                     0 1px 3px rgba(0, 0, 0, 0.1);
         position: relative;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border: 1px solid rgba(59, 130, 246, 0.15);
         background: linear-gradient(
             to right bottom,
             rgba(255, 255, 255, 1),
             rgba(247, 249, 251, 0.8)
         );
+        cursor: pointer;
     }
 
     .changelog-version::before {
@@ -61,6 +62,7 @@ require_once __DIR__ . '/../common/header.php';
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
+        transition: all 0.4s ease;
     }
 
     .changelog-version::after {
@@ -73,45 +75,45 @@ require_once __DIR__ . '/../common/header.php';
         background: #3b82f6;
         border-radius: 50%;
         z-index: 2;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
     }
 
     .changelog-version:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1),
-                    0 2px 4px rgba(59, 130, 246, 0.1);
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15),
+                    0 4px 8px rgba(59, 130, 246, 0.1);
     }
 
     .changelog-version:hover::before {
         background: linear-gradient(
             135deg,
-            rgba(59, 130, 246, 0.3),
-            rgba(59, 130, 246, 0.15) 20%,
-            rgba(59, 130, 246, 0.08) 40%,
+            rgba(59, 130, 246, 0.4),
+            rgba(59, 130, 246, 0.2) 20%,
+            rgba(59, 130, 246, 0.1) 40%,
             transparent 60%
         );
+        padding: 2px;
     }
 
-    .changelog-version .version-dot {
-        content: '';
-        position: absolute;
-        left: -12px;
-        top: 24px;
-        width: 24px;
-        height: 24px;
-        background: #fff;
-        border: 2px solid #3b82f6;
-        border-radius: 50%;
-        z-index: 1;
+    .changelog-version:hover::after {
+        transform: scale(1.5);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        background: #60a5fa;
+    }
+
+    /* Add smooth transition for child elements */
+    .changelog-version * {
         transition: all 0.3s ease;
     }
 
-    .changelog-version:hover .version-dot {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2),
-                    0 0 16px rgba(59, 130, 246, 0.2);
-        border-width: 3px;
+    .changelog-version:hover h3 {
+        color: #3b82f6;
+        transform: translateX(4px);
+    }
+
+    .changelog-version:hover .version-date {
+        color: #60a5fa;
     }
 
     .version-header {
@@ -239,7 +241,7 @@ require_once __DIR__ . '/../common/header.php';
 <?php require_once __DIR__ . '/../common/top.php';?>
 
 <div class="section-header">
-    <h2 class="section-title">Changelog</h2>
+    <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Changelog</h2>
 </div>
 
 <div class="changelog" id="changelogContainer">
@@ -248,7 +250,7 @@ require_once __DIR__ . '/../common/header.php';
         <p>Loading changelog...</p>
     </div>
 </div>
-
+<?php require_once __DIR__ . '/../common/bottom.php';?>
 <script>
     async function loadChangelog() {
         try {

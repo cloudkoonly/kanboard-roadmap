@@ -298,9 +298,7 @@ body {
     gap: 0.5rem;
 }
 
-.section-title::before {
-    content: '\f7a9';  /* Route icon */
-    font-family: 'Font Awesome 6 Free';
+.section-title i {
     font-weight: 900;
     color: #3b82f6;
 }
