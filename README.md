@@ -53,12 +53,15 @@ You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](htt
 
 ## 🛠️ Requirements
 
-- PHP 7.4+
-- MySQL 5.7+ or MariaDB 10.2+
-- Web server (lite-lnmp)
-- Kanboard installation
+- Ubuntu 20.04+
+- Docker 20.10+
+- Docker Compose 1.29+
 
 ## 🚀 Quick Start
+
+cd kanboard-roadmap && bash install.sh
+
+## Or install by yourself
 
 1. Clone lite-lnmp repository:
 ```bash
