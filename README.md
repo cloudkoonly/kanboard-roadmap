@@ -1,5 +1,3 @@
-# Kanboard Roadmap
-
 <p align="center">
   <h1 align="center">Kanboard Roadmap</h1>
   <p align="center">
@@ -28,13 +26,10 @@ You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](htt
 ### Screenshots
 
 ![Demo Roadmap](https://file.cloudkoonly.com/data/kanborad-roadmap/roadmap-231240.png)
-*Product Roadmap View*
 
 ![Demo Feedback](https://file.cloudkoonly.com/data/kanborad-roadmap/feedback2.png)
-*User Feedback System*
 
 ![Demo Changelog](https://file.cloudkoonly.com/data/kanborad-roadmap/changelog2.png)
-*Changelog Management*
 
 ## 🚀 Features
 
