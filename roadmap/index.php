@@ -541,10 +541,6 @@
                 justify-content: space-between;
             }
 
-            .filter-group {
-                flex-direction: column;
-            }
-
             .filter-select {
                 flex: 1;
             }

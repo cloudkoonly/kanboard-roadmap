@@ -18,6 +18,7 @@ include_once __DIR__.'/../db.class.php';
 $input = json_decode(file_get_contents('php://input'), true);
 $title = $input['title'] ?? '';
 $description = $input['description'] ?? '';
+$email = $input['email'] ?? '';
 $tags = $input['tags'] ?? [];
 
 if (empty($title)) {
@@ -37,9 +38,9 @@ $db->conn($config);
 try {
     // Insert new feedback into tasks table
     $db->beginTransaction();
-    $sql = "INSERT INTO tasks (title, `description`, swimlane_id, project_id, column_id, date_creation) 
-            VALUES (:title, :description, 1, 1, 5, :time)";
-    $params = [':title' => $title, ':description' => $description, ':time' => time()];
+    $sql = "INSERT INTO tasks (title, `description`, swimlane_id, project_id, column_id, date_creation, color_id, reference) 
+            VALUES (:title, :description, 1, 1, 5, :time, 'green', :email)";
+    $params = [':title' => $title, ':description' => $description, ':time' => time(), ':email'=>$email];
     $taskId = $db->query($sql, $params, 'id');
 
     // Add tags if provided

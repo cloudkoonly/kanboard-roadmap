@@ -513,6 +513,18 @@ require_once __DIR__ . '/../common/header.php';
     .filter-select:hover {
         border-color: var(--accent-color);
     }
+
+    .form-hint {
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .form-hint {
+            color: #999;
+        }
+    }
 </style>
 </head>
 <?php require_once __DIR__ . '/../common/top.php';?>
@@ -559,6 +571,11 @@ require_once __DIR__ . '/../common/header.php';
             <div class="form-group">
                 <label for="feedbackDescription">Description</label>
                 <textarea id="feedbackDescription" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="feedbackEmail">Email (optional)</label>
+                <input type="email" id="feedbackEmail" class="form-input" placeholder="your@email.com">
+                <small class="form-hint">We'll notify you of updates to your feedback</small>
             </div>
             <div class="form-group">
                 <label for="feedbackTags">Type</label>
@@ -960,12 +977,18 @@ require_once __DIR__ . '/../common/header.php';
         });
     }
 
+    function isValidEmail(email) {
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+    }
+
     // Add this to your existing JavaScript
     async function submitFeedback(event) {
         event.preventDefault();
         const form = event.target;
         const title = form.querySelector('#feedbackTitle').value.trim();
         const description = form.querySelector('#feedbackDescription').value.trim();
+        const email = form.querySelector('#feedbackEmail').value.trim();
         const tag = form.querySelector('#feedbackTags').value;
         const submitButton = form.querySelector('button[type="submit"]');
         const successNotification = document.querySelector('#successNotification');
@@ -973,6 +996,13 @@ require_once __DIR__ . '/../common/header.php';
 
         if (!title) {
             errorNotification.textContent = 'Title is required';
+            errorNotification.style.display = 'block';
+            return;
+        }
+
+        // Email validation if provided
+        if (email && !isValidEmail(email)) {
+            errorNotification.textContent = 'Please enter a valid email address';
             errorNotification.style.display = 'block';
             return;
         }
@@ -991,6 +1021,7 @@ require_once __DIR__ . '/../common/header.php';
                 body: JSON.stringify({
                     title,
                     description,
+                    email: email || null,
                     tags: [tag]
                 })
             });
