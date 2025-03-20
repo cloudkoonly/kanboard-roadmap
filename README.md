@@ -60,7 +60,7 @@ You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](htt
 
 cd kanboard-roadmap && bash install.sh
 
-## Or install by yourself
+## 🛠️ Or install by yourself
 
 1. Clone lite-lnmp repository:
 ```bash
@@ -105,16 +105,6 @@ docker-compose up -d
 
 - Frontend: `http://roadmap.dev/roadmap/`
 - Admin: `http://roadmap.dev/` (username: admin, password: 123456) !important: change password after first login
-
-## 🎯 Roadmap
-
-View our public roadmap at `https://roadmap.cloudkoonly.com/roadmap/` to see what features we're planning.
-
-## 💬 Support
-
-- Create an issue in this repository
-- Join our community discussions
-- Email support: opensource@cloudkoonly.com
 
 ## ⭐ Why Choose This Over Alternatives?
 
@@ -170,5 +160,11 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 2. Create your feature branch
 3. Submit a pull request
 
-## 📝 Last updated: March 6, 2025
+## 💬 Support
+
+- Create an issue in this repository
+- Join our community discussions
+- Email support: opensource@cloudkoonly.com
+
+## 📝 Last updated: March 19, 2025
 2025 [Cloudkoonly](https://www.cloudkoonly.com). All Rights Reserved.
