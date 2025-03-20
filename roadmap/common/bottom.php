@@ -4,23 +4,11 @@
         <div class="footer-links">
             <a href="https://www.cloudkoonly.com" class="footer-link" target="_blank">
                 <i class="fa-solid fa-cloud"></i>
-                Cloudkoonly
-            </a>
-            <a href="https://roadmap.cloudkoonly.com/roadmap/" class="footer-link">
-                <i class="fa-regular fa-calendar"></i>
-                Roadmap
-            </a>
-            <a href="https://roadmap.cloudkoonly.com/roadmap/feedback/" class="footer-link">
-                <i class="fa-regular fa-comment"></i>
-                Feedback
-            </a>
-            <a href="https://roadmap.cloudkoonly.com/roadmap/changelog/" class="footer-link">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                Changelog
+                Cloud
             </a>
             <a href="https://github.com/cloudkoonly/kanboard-roadmap" class="footer-link" target="_blank">
                 <i class="fa-brands fa-github"></i>
-                GitHub
+                Self-hosted
             </a>
         </div>
         <div class="footer-copyright">
