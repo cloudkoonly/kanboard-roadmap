@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://roadmap.cloudkoonly.com/roadmap/">Online Demo</a> •
+  <a href="https://kanboardroadmap.cloudkoonly.com/roadmap/">Online Demo</a> •
   <a href="#features">Features</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#requirements">Requirements</a> •
@@ -21,7 +21,7 @@ Kanboard Roadmap is a comprehensive solution for managing product roadmaps, user
 
 ## 🖥️ Demo
 
-You can try out our demo site at: [https://roadmap.cloudkoonly.com/roadmap/](https://roadmap.cloudkoonly.com/roadmap/)
+You can try out our demo site at: [https://kanboardroadmap.cloudkoonly.com/roadmap/](https://kanboardroadmap.cloudkoonly.com/roadmap/)
 
 ### Screenshots
 
@@ -168,3 +168,5 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ## 📝 Last updated: March 19, 2025
 2025 [Cloudkoonly](https://www.cloudkoonly.com). All Rights Reserved.
+
+#roadmap #changelog #feedback #mit-license #canny #alternative-to-featurebase.app #alternative-to-canny.io #featurebase
