@@ -24,7 +24,7 @@ $config['db_host'] = DB_HOSTNAME?:'mysql';
 $config['db_database'] = DB_NAME?:'kanboard';
 $db = Database::getInstance();
 $db->conn($config);
-$sql = "update tasks set score=score+1 where id=:itemId";
+$sql = "update tasks set score=COALESCE(score, 0) + 1 where id=:itemId";
 $params = ['itemId'=>$itemId];
 $res = $db->query($sql, $params, '');
 $likes = 0;

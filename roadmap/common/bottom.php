@@ -6,7 +6,7 @@
                 <i class="fa-solid fa-cloud"></i>
                 Cloudkoonly
             </a>
-            <a href="https://roadmap.cloudkoonly.com/roadmap/feedback/" class="footer-link">
+            <a href="https://roadmap.cloudkoonly.com/roadmap/" class="footer-link">
                 <i class="fa-regular fa-calendar"></i>
                 Roadmap
             </a>
